@@ -12,7 +12,9 @@ public class AudioManager : MonoBehaviour
     [Header("Volume")]
     public VolumeSaveControler volumeSave;
     public float masterVolume = 0.5f;
+    public float masterVolumeEstresse = 0.5f;
     private Bus masterbus;
+    private Bus masterEstressebus;
 
     private void Awake(){
         instance = this;
@@ -33,6 +35,12 @@ public class AudioManager : MonoBehaviour
         masterVolume = nVolume;
         volumeSave.Volume = nVolume;
         masterbus.setVolume(masterVolume);
+    }
+    public void SetVolumeEstresse(float nVolume)
+    {
+        masterVolumeEstresse = nVolume;
+        // volumeSave.Volume = nVolume;
+        masterEstressebus.setVolume(masterVolumeEstresse);
     }
     public float GetVolume()
     {

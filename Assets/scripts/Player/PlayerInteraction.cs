@@ -79,7 +79,14 @@ public class PlayerInteraction : MonoBehaviour
                             break;
                             case 2:
                                 Debug.Log("iniciar Musica do radio");
+                              
+ 
+                                Destroy(interable.gameObject,10.0f);
+                                Invoke("MoreEstress",10.0f);
                                 AudioManager.instance.PlayEvent(interable.item.soundEvent,transform.position);
+
+
+                                mental.SetEstresse(0f);
                                 mental.SetAddEstresse(0.001f);
                             break;
                             case 3:
@@ -103,6 +110,9 @@ public class PlayerInteraction : MonoBehaviour
                                     Debug.LogError("Prefab não encontrado!");
                                 }
                                 break;
+                                case 5:
+                                    mental.SetAddEstresse(0.5f);
+                                break;
                         }
                     }
                 }
@@ -118,6 +128,7 @@ public class PlayerInteraction : MonoBehaviour
 
     IEnumerator MovingItem(Interable obj, Vector3 posittion, Transform parent){
         float timer =0;
+        obj.transform.SetParent(null);
         while(timer < 1){
             obj.transform.position = Vector3.Lerp(obj.transform.position,posittion, Time.deltaTime * 5);
             timer+=Time.deltaTime;
@@ -127,6 +138,7 @@ public class PlayerInteraction : MonoBehaviour
 
         obj.transform.position = posittion;
         obj.transform.SetParent(parent);
+        obj.transform.rotation = Quaternion.Euler(0,0,0);
     }
 
     private void OnTakeItem()
@@ -138,5 +150,8 @@ public class PlayerInteraction : MonoBehaviour
     }
     public void SetTakeItemtoFalse(){
         takeItem = false;
+    }
+    private void MoreEstress(){
+        mental.SetAddEstresse(0.01f);
     }
 }

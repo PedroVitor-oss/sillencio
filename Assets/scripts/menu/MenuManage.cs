@@ -8,13 +8,18 @@ public class MenuManage : MonoBehaviour
  Cursor.lockState = CursorLockMode.None;
     }
     public void Update(){
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(Input.GetKeyDown(KeyCode.Escape) && SceneManager.GetActiveScene().name != "Menu")
         {
 
         LoadSceneWithDelay("Menu");
+        }else{
+            Sair();
         }
     }
 
+    public void FimGame(){
+        LoadSceneWithDelay("GameOver");
+    }
     public void StartGame()
     {
         LoadSceneWithDelay("Game");
