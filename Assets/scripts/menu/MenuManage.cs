@@ -4,6 +4,17 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class MenuManage : MonoBehaviour
 {
+     void Start(){
+ Cursor.lockState = CursorLockMode.None;
+    }
+    public void Update(){
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+
+        LoadSceneWithDelay("Menu");
+        }
+    }
+
     public void StartGame()
     {
         LoadSceneWithDelay("Game");
@@ -39,6 +50,6 @@ public class MenuManage : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
      public void  Sair(){
-     
+     Application.Quit();
    }
 }

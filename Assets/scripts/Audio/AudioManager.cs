@@ -20,9 +20,7 @@ public class AudioManager : MonoBehaviour
 
         masterbus = RuntimeManager.GetBus("bus:/");
     }
-    private void Update(){
-        masterbus.setVolume(masterVolume);
-    }
+    
 
     public void PlayEvent(EventReference sound,Vector3 pos)
     {
@@ -34,6 +32,7 @@ public class AudioManager : MonoBehaviour
     {
         masterVolume = nVolume;
         volumeSave.Volume = nVolume;
+        masterbus.setVolume(masterVolume);
     }
     public float GetVolume()
     {

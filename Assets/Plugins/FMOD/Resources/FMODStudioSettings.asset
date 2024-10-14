@@ -380,8 +380,8 @@ MonoBehaviour:
   switchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: ../silencio_fmod/silencio_game.fspro
-  sourceBankPath: ../silencio_fmod/Build
+  sourceProjectPath: ../silencio_FMOD/silencio_game.fspro
+  sourceBankPath: ../silencio_FMOD/Build
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1

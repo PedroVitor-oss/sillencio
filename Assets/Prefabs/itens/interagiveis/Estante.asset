@@ -16,10 +16,10 @@ MonoBehaviour:
   collect: 0
   soundEvent:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1059846685
+      Data2: 1210671609
+      Data3: 1286315664
+      Data4: -54965873
+    Path: event:/drop
   text: estante
   indexFunction: 1
